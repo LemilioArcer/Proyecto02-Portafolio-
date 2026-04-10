@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #12131A;
+  background-color: #000000;
   border-radius: 20px;
 }
 
@@ -32,10 +32,15 @@
   margin-top: 40px;
 }
 
-.links a {
-  color: #FFFFFF;
+.text-container .links a {
+  color: #FACC15 !important;
   text-decoration: none;
   font-size: 14px;
-  border-bottom: 1px solid #FACC15;
+  border-bottom: 1px solid #FACC15 !important;
   padding-bottom: 2px;
+  transition: none !important;
+}
+
+.text-container .links a:hover {
+  opacity: 1 !important;
 }
