@@ -2,30 +2,37 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const handler = async (req, res) => {
+export default async (req, res) => {
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Wrong method' });
+    return res.status(405).json({ message: 'Method not allowed' });
   }
 
   try {
-    const { name, message, email } = req.body;
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+    const { name, message, email } = body;
+
+    if (!name || !message || !email) {
+      return res.status(400).json({ success: false, message: 'Missing fields' });
+    }
 
     const data = await resend.emails.send({
-      from: 'Portafolio interest <onboarding@resend.dev>',
+      from: 'Portfolio <onboarding@resend.dev>',
       to: 'emilioarce1285@gmail.com',
-      subject: `New message from ${name}`,
+      subject: `Nuevo mensaje de ${name}`,
       html: `
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
+        <p><strong>Mensaje:</strong></p>
         <p>${message}</p>
       `,
     });
 
     return res.status(200).json({ success: true, data });
   } catch (error) {
-    return res.status(500).json({ success: false, error });
+    return res.status(500).json({ success: false, error: error.message });
   }
 };
-
-export default handler;
