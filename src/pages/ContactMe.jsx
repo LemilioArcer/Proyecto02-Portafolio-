@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import "./Contactme.css";
+import "./ContactMe.css";
 
 const Contactme = () => {
   const [form, setForm] = useState({
