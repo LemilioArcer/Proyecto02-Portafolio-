@@ -1,26 +1,21 @@
 import './Hero.css';
-import {Link} from "react-router"
+
 const Hero = () => {
   return (
-    <div>
-      <p className="main-text">
-        Architecting <span className='secondary-text'>Digital Artifacts</span>
-      </p>
-      <p>
-        Full-stack developer specializing in building high-performance, visually
-        stunning web experiences that live at the intersection of design and
-        data.
-      </p>
-      <div className='brn-container'>
-        <button className='btn'> 
-            <Link to= "/Projects">View Projects</Link>
-        </button>
-        <button className='btn'> 
-            <Link to= "/Aboutme">About Me</Link>
-        </button>
-        
+    <section className="hero-container">
+      <div className="hero-card">
+        <h1 className="main-text">
+          Luis Emilio Arce Ruvalcaba
+          <span className='secondary-text'>
+            Software Engineer
+          </span>
+        </h1>   
+
+        <p className='description-text'>
+          Software engineering student focused on building interactive projects, from modern web applications with React to exploring game development concepts. I enjoy solving problems through code and working across different areas like C++, Python, and networking, combining creativity with technology to bring ideas to life.
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 

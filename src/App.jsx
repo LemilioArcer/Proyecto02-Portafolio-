@@ -5,7 +5,7 @@ import Navbar from "./components/navbar";
 function App() {
   return (
     <>
-      <h1>hola mundo</h1>
+      <h1>Welcome</h1>
       <Navbar>
         <Hero />
       </Navbar>

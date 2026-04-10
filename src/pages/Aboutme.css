@@ -1,0 +1,41 @@
+.text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #12131A;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  text-align: left;
+  letter-spacing: -1px;
+  border-left: 6px solid #FACC15;
+  padding-left: 14px;
+}
+
+.description-text {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 650px;
+}
+
+.links {
+  margin-top: 40px;
+}
+
+.links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid #FACC15;
+  padding-bottom: 2px;
+}
